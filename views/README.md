@@ -3,3 +3,4 @@
 
 # Performance optimizations
 * Removed render blocking in `updatePositions` function by separating rendering from js execution.
+* Fixed render blocking js in `changePizzaSizes` function while changing pizza sizes.
