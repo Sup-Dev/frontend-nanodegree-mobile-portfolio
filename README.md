@@ -53,3 +53,8 @@ The portfolio was built on Twitter's <a href="http://getbootstrap.com/">Bootstra
 
 * <a href="http://getbootstrap.com/css/">Bootstrap's CSS Classes</a>
 * <a href="http://getbootstrap.com/components/">Bootstrap's Components</a>
+
+### Optimizations in `index.html`
+* Compressed __pizzeria__ and __profilepic__ images.
+* External javascript is being asynchronous loaded.
+* External CSS link has it's media specified to print.
