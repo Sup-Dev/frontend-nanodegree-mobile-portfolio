@@ -518,14 +518,23 @@ function updatePositions() {
 
   var items = document.getElementsByClassName('mover');
   var phasePositions = [];
+  var pizzaPositions = [];
+  var scrollTopPosition = document.body.scrollTop;
   
-  for (var i = 0; i < items.length; i++) {
-    var phase = Math.sin((document.body.scrollTop / 1250) + (i % 5));
-    phasePositions.push(items[i].basicLeft + 100 * phase + 'px');
+  // determine all the phase positions
+  for (var i=0; i < 8; i++) {
+    phasePositions.push(items[i].basicLeft);
   }
   
+  // calculate positions for pizzas
+  for (var i = 0; i < items.length; i++) {
+    var phase = Math.sin((scrollTopPosition / 1250) + (i % 5)); 
+    pizzaPositions.push(phasePositions[i%8] + 100 * phase + 'px');
+  }
+  
+  // render the pizzas
   for (var i=0; i < items.length; i++) {
-    items[i].style.left = phasePositions[i];
+    items[i].style.left = pizzaPositions[i];
   }
 
   // User Timing API to the rescue again. Seriously, it's worth learning.
